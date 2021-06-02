@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>Hiro phone</title>
+  </head>
+  <body>
+    <header>
+      <div class="navBar">
+        <div class="logo">
+          <a href="#">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1000px-Amazon_logo.svg.png"
+              alt=""
+          /></a>
+        </div>
+        <div class="search__bar">
+          <form action="#">
+            <input
+              type="text"
+              id="search__bar"
+              placeholder="I'm shopping for..."
+            />
+
+            <button type="submit" style="display: none"></button>
+          </form>
+        </div>
+        <div class="cart"><i class="fas fa-shopping-cart"></i> 8</div>
+      </div>
+    </header>
+    <main>
+      <div class="banner">
+        <img
+          src="https://images-eu.ssl-images-amazon.com/images/G/29/kindle/journeys/MzNiMDk3OTkt/MzNiMDk3OTkt-ZDZhM2VjZjIt-w1500._CB669530205_.jpg"
+          alt=""
+        />
+      </div>
+      <div class="Products">
+        <div class="row" id="Products"></div>
+      </div>
+    </main>
+    <footer class="container-fluid py-5">
+      <div class="row">
+        <div class="col-12 col-md">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            class="d-block mb-2"
+            role="img"
+            viewBox="0 0 24 24"
+            focusable="false"
+          >
+            <title>Product</title>
+            <circle cx="12" cy="12" r="10" />
+            <path
+              d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"
+            />
+          </svg>
+          <small class="d-block mb-3 text-muted">&copy; 2017-2021</small>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Features</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="#">Cool stuff</a></li>
+            <li><a class="text-muted" href="#">Random feature</a></li>
+            <li><a class="text-muted" href="#">Team feature</a></li>
+            <li><a class="text-muted" href="#">Stuff for developers</a></li>
+            <li><a class="text-muted" href="#">Another one</a></li>
+            <li><a class="text-muted" href="#">Last time</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Resources</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="#">Resource</a></li>
+            <li><a class="text-muted" href="#">Resource name</a></li>
+            <li><a class="text-muted" href="#">Another resource</a></li>
+            <li><a class="text-muted" href="#">Final resource</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Resources</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="#">Business</a></li>
+            <li><a class="text-muted" href="#">Education</a></li>
+            <li><a class="text-muted" href="#">Government</a></li>
+            <li><a class="text-muted" href="#">Gaming</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>About</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="#">Team</a></li>
+            <li><a class="text-muted" href="#">Locations</a></li>
+            <li><a class="text-muted" href="#">Privacy</a></li>
+            <li><a class="text-muted" href="#">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      const Products = document.querySelector('#Products');
+      window.onload = () => {
+        const currentProducts = [
+          {
+            name: ' ASUS - ROG Phone 5 ZS673KS Noir 256Go - RAM 16 Go',
+            image:
+              'https://m.media-amazon.com/images/I/61bsA2wEyXL._AC_UL480_FMwebp_QL65_.jpg',
+            currentPrice: '19',
+            oldPrice: '20',
+            rating: '⭐⭐⭐',
+          },
+          {
+            name: 'Smartphone Offerta del Giorno 4G, EL 6C Telefoni Cellulari Economici, 128GB Espandibili Cellulare',
+            image:
+              'https://m.media-amazon.com/images/I/51+SMT8U-iS._AC_UL480_FMwebp_QL65_.jpg',
+            currentPrice: '19',
+            oldPrice: '20',
+            rating: '⭐⭐⭐⭐',
+          },
+          {
+            name: 'Asus - ROG Phone 3 ZS661KS noir 512Go - 12 Go',
+            image:
+              'https://m.media-amazon.com/images/I/61wki8GSXVL._AC_UL480_FMwebp_QL65_.jpg',
+            currentPrice: '879,00',
+            oldPrice: '940,00',
+            rating: '⭐⭐⭐⭐',
+          },
+          {
+            name: 'Samsung Galaxy A71 Smartphone, Display 6.7" Super AMOLED, 4 Fotocamere Posteriori, 128 GB Espandibili,',
+            image:
+              'https://m.media-amazon.com/images/I/71kPQ2k336L._AC_UL480_FMwebp_QL65_.jpg',
+            currentPrice: '347,51',
+            oldPrice: '479,90',
+            rating: '⭐⭐⭐⭐⭐',
+          },
+          {
+            name: 'Xiaomi Redmi Note 8 Pro Phone 6Gb Ram + 128 Gb Rom, 6.53"Full Screen, Helio G90T Octa-Core Mtk Cpu, 20Mp Front',
+            image:
+              'https://m.media-amazon.com/images/I/41M0urI8u6L._AC_UL480_FMwebp_QL65_.jpg',
+            currentPrice: '179,00',
+            oldPrice: '184,99',
+            rating: '⭐⭐⭐',
+          },
+          {
+            name: 'Nokia 2720 Telefono Cellulare 4G Dual Sim, Display 2.8" a Colori, 4GB, Tasti Grandi, Tasto SOS, Bluetooth, Fotocamera',
+            image:
+              'https://m.media-amazon.com/images/I/61WMaxL5aCL._AC_UL480_FMwebp_QL65_.jpg',
+            currentPrice: '88,00',
+            oldPrice: '99,99',
+            rating: '⭐⭐⭐⭐',
+          },
+          {
+            name: "Blackview A80 Plus Cellulari Offerte, Schermo 6.49'' HD+ In-Cell Waterdrop Telefoni, Helio P25 Octa-core 4GB+64GB",
+            image:
+              'https://m.media-amazon.com/images/I/61VFUjsIXCS._AC_UL480_FMwebp_QL65_.jpg',
+            currentPrice: '160,24',
+            oldPrice: '124,99',
+            rating: '⭐⭐⭐⭐⭐',
+          },
+          {
+            name: 'Black Shark 4 [5G] - Smartphone 8+128GB, Schermo 144Hz 6,67", Snapdragon 870,',
+            image:
+              'https://m.media-amazon.com/images/I/61Ue477Ex8S._AC_UL480_FMwebp_QL65_.jpg',
+            currentPrice: '469,00',
+            oldPrice: '700,00',
+            rating: '⭐⭐⭐⭐',
+          },
+          {
+            name: 'ASUS ROG Phone 3 Strix 16,7 cm (6.59") 8 GB 256 GB Doppia SIM 5G USB Tipo-C Nero ',
+            image:
+              'https://m.media-amazon.com/images/I/71VcgBG3c8L._AC_UL480_FMwebp_QL65_.jpg',
+            currentPrice: '840,00',
+            oldPrice: '900,00',
+            rating: '⭐⭐⭐⭐',
+          },
+          {
+            name: 'ENERGY E20 - Cellulare sbloccato 2G - Tastiera EU - Spine EU/US/UK/IN (Display : 2, 40" - 32 Mo - Doppia SIM) Nero',
+            image:
+              'https://m.media-amazon.com/images/I/710LmPSDpbL._AC_UL480_FMwebp_QL65_.jpg',
+            currentPrice: '829,00',
+            oldPrice: '888,00',
+            rating: '⭐⭐⭐⭐',
+          },
+          {
+            name: 'Ulefone Armor 8 Rugged Smartphone Android 10, 6,1’’HD+ IP68 Robusto',
+            image:
+              'https://m.media-amazon.com/images/I/61A1zWpMt0L._AC_UL480_QL65_.jpg',
+            currentPrice: '179,99',
+            oldPrice: '200,00',
+            rating: '⭐⭐⭐⭐⭐',
+          },
+          {
+            name: ' Xiaomi Poco X3 NFC - Smartphone 128GB, 6GB RAM, Dual Sim, Shadow Gray',
+            image:
+              'https://m.media-amazon.com/images/I/61iJ6RQS-eL._AC_UL480_QL65_.jpg',
+            currentPrice: '118,53',
+            oldPrice: '196,89',
+            rating: '⭐⭐⭐',
+          },
+          {
+            name: 'IIIF150 B2021 IP68 Rugged Smartphone In Offerta, 5.86" HD+ 8000mAh 6GB+64GB Octa-core Impermea...',
+            image:
+              'https://m.media-amazon.com/images/I/71NGxXHF+nL._AC_UL480_QL65_.jpg',
+            currentPrice: '159,99',
+            oldPrice: '200',
+            rating: '⭐⭐⭐⭐',
+          },
+          {
+            name: 'Samsung Galaxy A41 Smartphone, Display 6.1" Super AMOLED, 3 Fotocamere Posteriori, 64 GB Espandibili, ',
+            image:
+              'https://m.media-amazon.com/images/I/71Sb--jAW3L._AC_UL480_QL65_.jpg',
+            currentPrice: '1200',
+            oldPrice: '2000',
+            rating: '⭐⭐⭐⭐',
+          },
+          {
+            name: 'Smartphone CAT S42 (display HD + da 13,97 cm (5,5 pollici), memoria interna da 32 GB',
+            image:
+              'https://m.media-amazon.com/images/I/51rHk-Z-1lL._AC_UL480_FMwebp_QL65_.jpg',
+            currentPrice: '22,99',
+            oldPrice: '22,99',
+            rating: '⭐⭐⭐⭐⭐⭐⭐',
+          },
+        ];
+        for (let i = 0; i < currentProducts.length; i++) {
+          Products.innerHTML += `<div class="product col-2">
+            <img
+              src=${currentProducts[i].image}
+              alt="${currentProducts[i].name}"
+            />
+            <div class="product__info">
+              <div class="name">
+               ${currentProducts[i].name}
+              </div>
+              <div class="price__info">
+                <div class="price">${currentProducts[i].currentPrice}€</div>
+                <small class="discount">${currentProducts[i].oldPrice}€</small>
+              </div>
+              <div class="rating">${currentProducts[i].rating}</div>
+            </div>
+          </div>`;
+        }
+      };
+    </script>
+  </body>
+</html>
